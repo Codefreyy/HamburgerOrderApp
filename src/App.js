@@ -1,25 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import Meals from "./Components/Meals";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+//设置移动端的适配
+document.documentElement.style.fontSize = 100 / 750 + 'vw';
+
+const App = () => {
+
+    return (
+        <>
+            <div style={{ width: '750rem' }}>
+                <Meals />
+            </div>
+        </>
+    );
+};
 
 export default App;

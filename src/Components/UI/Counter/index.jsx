@@ -1,21 +1,21 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import classes from './Counter.module.css';
+import CartContext from '../../store/cart.context';
 
 
 // 计数器的组件
 const Counter = (props) => {
+    const ctx = useContext(CartContext)
     const addButtonHandler = () => {
-        props.onAdd(props.meal);
+        ctx.addItem(props.meal)
     }
-
     const delButtonHandler = () => {
-        props.onDel(props.meal)
+        ctx.removeItem(props.meal)
     }
 
     return (
 
         < div className={classes.Counter} >
-
             {
                 (props.meal.amount && props.meal.amount !== 0) ? (
                     <>

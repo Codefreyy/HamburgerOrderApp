@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import Meals from "./Components/Meals";
+import CartContext from './Components/store/cart.context'
+
 
 //设置移动端的适配
 document.documentElement.style.fontSize = 100 / 750 + 'vw';
@@ -68,7 +70,7 @@ const App = () => {
     });
 
     //向购物车中添加商品
-    const addMealHandler = (meal) => {
+    const addItem = (meal) => {
         //meal 要添加进购物车的商品
         //对购物车对象进行一个浅复制
         const newCart = { ...cartData }
@@ -91,7 +93,7 @@ const App = () => {
 
 
     //删除购物车商品
-    const delMealHandler = (meal) => {
+    const removeItem = (meal) => {
         //meal 要添加进购物车的商品
         //对购物车对象进行一个浅复制
         const newCart = { ...cartData }
@@ -110,11 +112,15 @@ const App = () => {
         setCartData(newCart)
     }
     return (
-        <>
-            <div style={{ width: '750rem' }}>
-                <Meals mealsData={mealsData} onAdd={addMealHandler} onDel={delMealHandler} />
-            </div>
-        </>
+        <CartContext.Provider value={{ ...cartData, addItem, removeItem }}>
+            <>
+                <div style={{ width: '750rem' }}>
+                    <Meals mealsData={mealsData} />
+                </div>
+            </>
+
+        </CartContext.Provider>
+
     );
 };
 

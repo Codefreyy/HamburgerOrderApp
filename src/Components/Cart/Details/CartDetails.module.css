@@ -1,0 +1,33 @@
+.CartDetails {
+    width: 750rem;
+    position: absolute;
+    background-color: #fff;
+    bottom: 0;
+    padding-bottom: 120rem;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 30rem;
+}
+
+.title {
+    font-weight: bold;
+    font-size: 28rem;
+    margin: 0;
+}
+
+.clear {
+    display: flex;
+    align-items: center;
+    color: #aaa;
+    font-size: 24rem;
+
+}
+
+.clear span {
+    margin-left: 10rem;
+}

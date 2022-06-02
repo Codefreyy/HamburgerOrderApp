@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import classes from './Counter.module.css';
-import CartContext from '../../store/cart.context';
+import CartContext from '../../store/cart-context';
 import '@icon-park/react/styles/index.css'
 import { Plus } from '@icon-park/react'
 import { Minus } from '@icon-park/react'

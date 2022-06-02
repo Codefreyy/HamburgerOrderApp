@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import FilterMeals from './Components/FilterMeals';
 import Meals from "./Components/Meals";
-import CartContext from './Components/store/cart.context'
+import CartContext from './Components/store/cart-context';
+import Cart from './Components/Cart'
+
 
 
 //设置移动端的适配
@@ -124,6 +126,8 @@ const App = () => {
                 <div style={{ width: '750rem' }}>
                     <FilterMeals onFilter={filterHandler} />
                     <Meals mealsData={mealsData} />
+                    <Cart />
+
                 </div>
             </>
 

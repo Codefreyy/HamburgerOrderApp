@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import FilterMeals from './Components/FilterMeals';
 import Meals from "./Components/Meals";
 import CartContext from './Components/store/cart.context'
 
@@ -62,12 +63,18 @@ const MEALS_DATA = [
 
 
 const App = () => {
-    const [mealsData] = useState(MEALS_DATA)
+    const [mealsData, setMealsData] = useState(MEALS_DATA)
     const [cartData, setCartData] = useState({
         items: [],
         totalAmount: 0,
         totalPrice: 0
     });
+
+    //创建一个过滤meals的函数
+    const filterHandler = (keyword) => {
+        const newMealsData = MEALS_DATA.filter(item => item.title.indexOf(keyword) !== -1)
+        setMealsData(newMealsData);
+    }
 
     //向购物车中添加商品
     const addItem = (meal) => {
@@ -115,6 +122,7 @@ const App = () => {
         <CartContext.Provider value={{ ...cartData, addItem, removeItem }}>
             <>
                 <div style={{ width: '750rem' }}>
+                    <FilterMeals onFilter={filterHandler} />
                     <Meals mealsData={mealsData} />
                 </div>
             </>

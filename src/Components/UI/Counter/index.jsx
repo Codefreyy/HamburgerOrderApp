@@ -1,6 +1,9 @@
 import React, { useContext } from 'react';
 import classes from './Counter.module.css';
 import CartContext from '../../store/cart.context';
+import '@icon-park/react/styles/index.css'
+import { Plus } from '@icon-park/react'
+import { Minus } from '@icon-park/react'
 
 
 // 计数器的组件
@@ -21,7 +24,7 @@ const Counter = (props) => {
                     <>
                         <button
                             onClick={delButtonHandler}
-                            className={classes.Sub}>-</button>
+                            className={classes.Sub}><Minus theme="outline" size="16" fill="#333" /></button>
                         <span className={classes.count}>{props.meal.amount}</span>
                     </>
                 ) : null
@@ -30,7 +33,7 @@ const Counter = (props) => {
             <button
                 onClick={addButtonHandler}
                 className={classes.Add}>
-                +
+                <Plus theme="outline" size="16" fill="#333" />
             </button>
         </div >
     );

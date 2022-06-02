@@ -1,4 +1,5 @@
 .Meal {
+
     display: flex;
     align-items: center;
     padding: 30rem 20rem;
@@ -14,14 +15,14 @@ img {
 }
 
 .title {
-    font-size: 16px;
+    font-size: 32rem;
     font-weight: normal;
     margin: 0;
 }
 
 .Desc {
     margin: 2rem;
-    font-size: 12px;
+    font-size: 24rem;
     color: #aaa;
     padding-right: 12rem;
 
@@ -35,10 +36,10 @@ img {
 
 .Price {
     font-weight: bold;
-    font-size: 18px;
+    font-size: 36rem;
 }
 
 .Price::before {
     content: '￥';
-    font-size: 12px;
+    font-size: 24rem;
 }

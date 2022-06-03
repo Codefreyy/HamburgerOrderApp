@@ -10,7 +10,9 @@ const CartDetails = () => {
     return (
         <>
             <Backdrop>
-                <div className={styles.CartDetails}>
+                <div className={styles.CartDetails}
+                    onClick={e => e.stopPropagation()}
+                >
                     <header className={styles.header}>
                         <h2 className={styles.title}>餐品详情</h2>
 
@@ -20,10 +22,10 @@ const CartDetails = () => {
                         </div>
                     </header>
 
-                    <div>
+                    <div className={styles.mealList}>
                         {
                             ctx.items.map(item =>
-                                <Meal key={item.id} meal={item} />)
+                                <Meal noDesc key={item.id} meal={item} />)
                         }
                     </div>
                 </div>

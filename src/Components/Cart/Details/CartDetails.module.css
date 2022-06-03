@@ -1,5 +1,8 @@
 .CartDetails {
+    display: flex;
+    flex-flow: column;
     width: 750rem;
+    max-height: 1200rem;
     position: absolute;
     background-color: #fff;
     bottom: 0;
@@ -30,4 +33,8 @@
 
 .clear span {
     margin-left: 10rem;
+}
+
+.mealList {
+    overflow: auto;
 }

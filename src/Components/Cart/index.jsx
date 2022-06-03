@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import styles from './Cart.module.css'
 //这是私有的目录，服务器访问不到，所以在这里引入
 import iconImg from '../../asset/bag.png'
@@ -8,13 +8,20 @@ import Checkout from './Checkout'
 
 
 const Cart = () => {
-    //组件每次重新渲染的适合，检查商品总数量，如果数量为0，则修改showDetails为false
-
-
+    const ctx = useContext(CartContext);
     //设置结账页的显示与隐藏
     const [showCheckout, setShowCheckout] = useState(false);
     //添加一个state来设置详情是否显示
     const [showDetails, setShowDetails] = useState(false);
+    //组件每次重新渲染的适合，检查商品总数量，如果数量为0，则修改showDetails为false
+    useEffect(() => {
+        if (ctx.totalAmount === 0) {
+            setShowDetails(false);
+            setShowCheckout(false);
+        }
+    })
+
+
 
     // 关闭模态框
     const hideCheckoutHandler = () => {
@@ -35,7 +42,7 @@ const Cart = () => {
         setShowCheckout(true)
     }
 
-    const ctx = useContext(CartContext);
+
     return (
         <>
             <div className={styles.Cart} onClick={toggleDetailsHandler}>

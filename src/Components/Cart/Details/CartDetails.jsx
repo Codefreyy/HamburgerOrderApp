@@ -24,7 +24,7 @@ const CartDetails = () => {
 
     return (
         <>
-            <Backdrop onClick={cancelHandler}>
+            <Backdrop>
                 {showConfirm && <Confirm onCancel={cancelHandler} onOk={okHandler} ConfirmText='你确定要清空购物车吗？' />}
                 <div className={styles.CartDetails}
                     onClick={e => e.stopPropagation()}

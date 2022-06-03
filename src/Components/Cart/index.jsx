@@ -8,6 +8,9 @@ import Checkout from './Checkout'
 
 
 const Cart = () => {
+    //组件每次重新渲染的适合，检查商品总数量，如果数量为0，则修改showDetails为false
+
+
     //设置结账页的显示与隐藏
     const [showCheckout, setShowCheckout] = useState(false);
     //添加一个state来设置详情是否显示
@@ -20,7 +23,10 @@ const Cart = () => {
 
     //添加一个显示详情页的函数
     const toggleDetailsHandler = () => {
-        if (ctx.totalAmount === 0) return
+        if (ctx.totalAmount === 0) {
+            setShowDetails(false);
+            return;
+        }
         setShowDetails(prevState => !prevState);
     }
 

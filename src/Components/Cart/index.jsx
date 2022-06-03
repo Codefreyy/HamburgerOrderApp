@@ -35,7 +35,8 @@ const Cart = () => {
             <div className={styles.Cart} onClick={toggleDetailsHandler}>
                 {/* todo：这里有一个bug */}
                 {showCheckout && <Checkout onHide={hideCheckoutHandler} />}
-                {showDetails && ctx.totalAmount && <CartDetails />}
+                {showDetails && <CartDetails />}
+
                 <div className={styles.Icon}>
                     <img src={iconImg} alt="购物袋" />
                     {ctx.totalAmount === 0 ? null : <span className={styles.TotalAmount}>{ctx.totalAmount}</span>}

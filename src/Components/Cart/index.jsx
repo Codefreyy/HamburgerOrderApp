@@ -19,7 +19,7 @@ const Cart = () => {
             setShowDetails(false);
             setShowCheckout(false);
         }
-    })
+    }, [ctx, setShowDetails, setShowCheckout])
 
 
 

@@ -19,7 +19,7 @@ const CartDetails = () => {
     }
 
     const okHandler = () => {
-        ctx.clearCart();
+        ctx.cartDispatch({ type: 'CLEAR' })
     }
 
     return (

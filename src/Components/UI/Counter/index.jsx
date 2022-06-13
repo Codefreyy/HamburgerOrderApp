@@ -10,10 +10,11 @@ import { Minus } from '@icon-park/react'
 const Counter = (props) => {
     const ctx = useContext(CartContext)
     const addButtonHandler = () => {
-        ctx.addItem(props.meal)
+        // ctx.addItem(props.meal)
+        ctx.cartDispatch({ type: 'ADD', meal: props.meal });
     }
     const delButtonHandler = () => {
-        ctx.removeItem(props.meal)
+        ctx.cartDispatch({ type: 'REMOVE', meal: props.meal });
     }
 
     return (
